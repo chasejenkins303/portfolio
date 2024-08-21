@@ -11,30 +11,20 @@ import {
 } from "react-router-dom";
 import Home from './pages/Home'
 import Resume from './pages/Resume';
+import Navbar from './components/Navbar';
 import { ThemeProvider, createTheme } from '@mui/material/styles';
 
-const theme = createTheme({
-  palette: {
-    primary: {
-      main: '#6a1b9a',
-    },
-    secondary: {
-      main: '#fbc02d',
-    },
-  },
-});
 
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
     <Router>
+      {/* <Navbar/> */}
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route  path="/" element={<Home />} />
         <Route path='/resume' element={<Resume />}/>
       </Routes>
     </Router>
-    </ThemeProvider>
   );
 }
 

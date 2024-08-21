@@ -1,11 +1,8 @@
-import ButtonAppBar from "../components/ButtonAppBar"
 
 function Home(){
     return (
-
-        <div>
-            <ButtonAppBar></ButtonAppBar>
-            Hello Home
+        <div className="bg-black min-h-[100vh]">
+            <p className="text-text">Home Page</p>
         </div>
     )
 }
