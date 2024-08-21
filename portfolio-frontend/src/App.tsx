@@ -19,7 +19,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 function App() {
   return (
     <Router>
-      {/* <Navbar/> */}
+      <Navbar/>
       <Routes>
         <Route  path="/" element={<Home />} />
         <Route path='/resume' element={<Resume />}/>

@@ -1,14 +1,17 @@
 
 export default function Navbar() {
     return(
-        <div className="w-full h-16 bg-mauve flex justify-between items-center px-20">
-            <p>Chase Jenkins</p>
-            <div className="flex  gap-6">
-                <p>
-                    Tag
+        <div className="w-full h-16 bg-light flex justify-between items-center px-20 text-black">
+            <p className="text-xl">Chase Jenkins</p>
+            <div className="flex gap-16 text-lg">
+                <p >
+                    Contact
                 </p>
                 <p>
-                    Tag
+                    Experience
+                </p>
+                <p>
+                    Projects
                 </p>
             </div>
         </div>
