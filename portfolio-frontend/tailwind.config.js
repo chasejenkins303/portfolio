@@ -14,7 +14,11 @@ module.exports = {
       light: '#DDC8C4',
       text: '#EFF9F0'
     },
-    extend: {},
+    extend: {
+      fontFamily: {
+        sans: ['Ubuntu', 'sans-serif'],
+      },
+    },
   },
   plugins: [],
 }
