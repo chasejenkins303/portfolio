@@ -18,6 +18,20 @@ module.exports = {
       fontFamily: {
         sans: ['Ubuntu', 'sans-serif'],
       },
+      animation: {
+        float: 'float 3s ease-in-out infinite',
+        gradient: 'gradientShift 10s ease infinite',
+        pulse: 'pulse 3s ease-in-out infinite',
+        spinSlow: 'spinSlow 20s linear infinite',
+        wave: 'wave 5s ease-in-out infinite alternate',
+      },
+      keyframes: { 
+        float: {
+          "0%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-10px)" },
+          "100%": { transform: "translateY(0)" }
+        } 
+      }
     },
   },
   plugins: [],
