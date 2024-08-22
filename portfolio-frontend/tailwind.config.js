@@ -24,13 +24,21 @@ module.exports = {
         pulse: 'pulse 3s ease-in-out infinite',
         spinSlow: 'spinSlow 20s linear infinite',
         wave: 'wave 5s ease-in-out infinite alternate',
+        fadeIn: 'fadeIn 1s ease-in forwards',
+        fadeInTwo: 'fadeIn 3s ease-in forwards',
+        fadeInThree: 'fadeIn 4s ease-in forwards'
       },
       keyframes: { 
         float: {
           "0%": { transform: "translateY(0)" },
           "50%": { transform: "translateY(-10px)" },
           "100%": { transform: "translateY(0)" }
-        } 
+        },
+        fadeIn: {
+          '0%': { opacity: '0' },
+          '75%': { opacity: '0.5' },
+          '100%': { opacity: '1' },
+        }, 
       }
     },
   },

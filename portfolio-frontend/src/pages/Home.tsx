@@ -1,16 +1,24 @@
 import WhiteSpace from "../components/WhiteSpace"
+import { useState, useEffect } from "react";
+
 function Home(){
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        setIsLoaded(true);
+    }, []);
+
     return (
         <div className="font-sans bg-mauve min-h-[100vh] w-full">
-            <WhiteSpace/>
-            <div className="min-h-[55vh] flex justify-center items-end mb-12">
+            <WhiteSpace isLoaded={isLoaded}/>
+            <div className={`min-h-[55vh] flex justify-center items-end mb-12`}>
                 <div className="flex flex-col justify-center items-center text-center pt-12 gap-12">
-                    <h1 className="text-light text-bold text-8xl p-8 rounded-xl relative">
+                    <h1 className={`text-light text-bold text-8xl p-8 rounded-xl relative ${isLoaded ? 'animate-fadeIn' : 'opacity-0'}`}>
                         Chase Jenkins 
                         <span className="absolute top-0 left-0 w-8 h-8 border-t-8 border-l-8 border-light"></span>
                         <span className="absolute bottom-0 right-0 w-8 h-8 border-b-8 border-r-8 border-light"></span>
                     </h1>
-                    <div className="max-w-[35vw] text-black bg-light text-bold rounded-xl flex-col p-4 gap-2">
+                    <div className={`max-w-[35vw] text-black bg-light text-bold rounded-xl flex-col p-4 gap-2 ${isLoaded ? 'animate-fadeInTwo' : 'opacity-0'}`}>
                         <p className="text-xl underline pb-4">Software Engineer</p>
                         <p className="text-lg">Hello, I am a software engineer with a passion for creating innovative, reliable, and useful software. Feel free to reach out via any of the listed methods and thank you for stopping by!</p>
                     </div>
@@ -18,7 +26,7 @@ function Home(){
             </div>
 
 
-            <div className="flex justify-center">
+            <div className={`flex justify-center ${isLoaded ? 'animate-fadeInThree' : 'opacity-0'}`}>
                 <div className="flex w-[75vw] px-36 justify-evenly items-center pt-12 text-light text-lg">
                     {/* <button className="px-4 py-2 bg-light text-black rounded hover:underline">Contact</button> */}
                     <svg xmlns="http://www.w3.org/2000/svg" height="128px" viewBox="0 -960 960 960" width="128px" fill="#DDC8C4"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H160v400Zm140-40-56-56 103-104-104-104 57-56 160 160-160 160Zm180 0v-80h240v80H480Z"/></svg>
