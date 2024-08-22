@@ -9,7 +9,7 @@ function WhiteSpace(isLoaded: any) {
         <div className="w-4 h-4 bg-light rounded-full animate-float"></div>
         <div className="w-2 h-2 bg-light rounded-full animate-float"></div>
       </div>
-      {/* Right side floating dots */}
+      {/* Right side floating dotss */}
       <div className="relative w-1/6 h-full flex flex-col justify-center items-center space-y-8">
         <div className="w-2 h-2 bg-light rounded-full animate-float"></div>
         <div className="w-4 h-4 bg-light rounded-full animate-float"></div>
