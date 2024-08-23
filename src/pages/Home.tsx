@@ -38,6 +38,9 @@ function Home(){
                     {/* <button className="px-4 py-2 bg-light text-black rounded hover:underline">Projects</button> */}
                 </div>
             </div>
+            <div>
+                <p>Changes</p>
+            </div>
         </div>
     )
 }
