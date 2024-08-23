@@ -1,6 +1,7 @@
 {
   "name": "my-app",
   "version": "0.1.0",
+  "homepage": "https://chasejenkins303.github.io/portfolio",
   "private": true,
   "dependencies": {
     "@emotion/react": "^11.13.0",
