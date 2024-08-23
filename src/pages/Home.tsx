@@ -39,7 +39,7 @@ function Home(){
                 </div>
             </div>
             <div>
-                <p>Changes</p>
+                <p>Changes Again</p>
             </div>
         </div>
     )
