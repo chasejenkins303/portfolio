@@ -11,29 +11,34 @@ function Home() {
   return (
     <div className="font-sans bg-mauve min-h-[100vh] w-full">
       <WhiteSpace isLoaded={isLoaded} />
-      <div className={`min-h-[55vh] flex justify-center items-end mb-12`}>
+      <div className={`min-h-[55vh] flex justify-center items-end mb-8`}>
         <div className="flex flex-col justify-center items-center text-center pt-12 gap-12">
-          <h1
-            className={`text-light text-bold text-8xl p-8 rounded-xl relative ${
-              isLoaded ? "animate-fadeIn" : "opacity-0"
-            }`}
-          >
-            Chase Jenkins
-            <span className="absolute top-0 left-0 w-8 h-8 border-t-8 border-l-8 border-light"></span>
-            <span className="absolute bottom-0 right-0 w-8 h-8 border-b-8 border-r-8 border-light"></span>
-          </h1>
-          <div
-            className={`max-w-[35vw] text-black bg-light text-bold rounded-xl flex-col p-4 gap-2 ${
-              isLoaded ? "animate-fadeInTwo" : "opacity-0"
-            }`}
-          >
-            <p className="text-xl underline pb-4">Software Engineer</p>
-            <p className="text-lg">
-              Hello, I am a software engineer with a passion for creating
-              innovative, reliable, and useful software. Feel free to reach out
-              via any of the listed methods and thank you for stopping by!
-            </p>
-          </div>
+            <h1
+                className={`text-light text-8xl p-8 font-medium rounded-xl relative ${
+                isLoaded ? "animate-fadeIn" : "opacity-0"
+                }`}
+            >
+                Chase Jenkins
+                <span className="absolute top-0 left-0 w-8 h-8 border-t-8 border-l-8 border-light"></span>
+                <span className="absolute bottom-0 right-0 w-8 h-8 border-b-8 border-r-8 border-light"></span>
+            </h1>
+            <div className={`bg-brown rounded-xl m-4 ${
+                    isLoaded ? "animate-fadeInTwo" : "opacity-0"
+                    }`}
+            >
+                <div
+                    className={`max-w-[35vw] text-black bg-light text-bold rounded-xl flex-col m-1 p-4 gap-2 ${
+                    isLoaded ? "animate-fadeInTwo" : "opacity-0"
+                    }`}
+                >
+                    <p className="text-xl underline pb-4 font-medium">Software Engineer</p>
+                    <p className="text-lg">
+                    Hello, I am a software engineer with a passion for creating
+                    innovative, reliable, and useful software. Feel free to reach out
+                    via any of the listed methods and thank you for stopping by!
+                    </p>
+                </div>
+            </div>
         </div>
       </div>
 
@@ -42,7 +47,7 @@ function Home() {
           isLoaded ? "animate-fadeInThree" : "opacity-0"
         }`}
       >
-        <div className="grid grid-cols-5 w-[75vw] px-36 gap-8 pt-12 text-light text-lg place-items-center">
+        <div className="grid grid-cols-5 w-[75vw] px-36 gap-4 pt-6 text-light text-lg place-items-center">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             height="128px"
