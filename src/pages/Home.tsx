@@ -3,13 +3,23 @@ import { useState, useEffect } from "react";
 
 function Home() {
   const [isLoaded, setIsLoaded] = useState(false);
+//   const [position, setPosition] = useState({ x: 0, y: 0 });
 
+//   const handleMouseMove = (e: any) => {
+//     setPosition({ x: e.clientX, y: e.clientY });
+//   };
+
+//   const gradientStyle = {
+//     background: `radial-gradient(circle at ${position.x}px ${position.y -64}px, #6B4D65 5%, #6B4D57 8%)`,
+//   };
   useEffect(() => {
     setIsLoaded(true);
   }, []);
 
   return (
     <div className="font-sans bg-mauve min-h-[100vh] w-full">
+         {/* style={gradientStyle}
+    onMouseMove={handleMouseMove}> */}
       <WhiteSpace isLoaded={isLoaded} />
       <div className={`min-h-[55vh] flex justify-center items-end mb-8`}>
         <div className="flex flex-col justify-center items-center text-center pt-12 gap-12">
@@ -22,12 +32,12 @@ function Home() {
                 <span className="absolute top-0 left-0 w-8 h-8 border-t-8 border-l-8 border-light"></span>
                 <span className="absolute bottom-0 right-0 w-8 h-8 border-b-8 border-r-8 border-light"></span>
             </h1>
-            <div className={`bg-brown rounded-xl m-4 ${
+            <div className={`rounded-xl m-4 ${
                     isLoaded ? "animate-fadeInTwo" : "opacity-0"
                     }`}
             >
                 <div
-                    className={`max-w-[35vw] text-black bg-light text-bold rounded-xl flex-col m-1 p-4 gap-2 ${
+                    className={`max-w-[45vw] text-light text-bold rounded-xl flex-col m-1 p-4 gap-2 ${
                     isLoaded ? "animate-fadeInTwo" : "opacity-0"
                     }`}
                 >
