@@ -19,7 +19,7 @@ function Home() {
   return (
     <div className="font-sans bg-mauve min-h-[100vh] w-full"
          style={gradientStyle}
-    onMouseMove={handleMouseMove}>
+         onMouseMove={handleMouseMove}>
       <WhiteSpace isLoaded={isLoaded} />
       <div className={`min-h-[55vh] flex justify-center items-end mb-8`}>
         <div className="flex flex-col justify-center items-center text-center pt-12 gap-2 sm:gap-12">
@@ -96,12 +96,20 @@ function Home() {
         </div>
       </div>
 
-      <div>
-        <div className="bg-light bg-opacity-20">
-            <p>Hello</p>
+      <div className="py-24 grid grid-cols-2 gap-12 mx-24 text-light">
+        <div className="hover:bg-opacity-10 bg-light bg-opacity-0 grid grid-cols-8 p-4 rounded-xl">
+            <p className="col-span-2 text-light">2024-Present</p>
+            <div className="col-span-6 flex flex-col">
+              <h1 className="text-lg text-text pb-3">Jr Associate Software Engineer &bull; Duck Creek Technologies</h1>
+              <p >Build, test, and refactor code to automate the process of provisioning infrastructure for new and existing customers. Automate the provisioning and configuration of virtual machines using terraform and powershell to ensure proper functionality and reliabilty. Assisted with interanal nuget packages to improve future developer experience</p>
+            </div>
         </div>
-        <div>
-            <p>Hello</p>
+        <div className="hover:bg-opacity-10 bg-light bg-opacity-0 grid grid-cols-8 p-4 rounded-xl">
+            <p className="col-span-2 text-light">2023-2024</p>
+            <div className="col-span-6 flex flex-col">
+              <h1 className="text-lg pb-3 text-text ">Frontend Developer Intern &bull; Globus Labs, UChicago</h1>
+              <p>Developed multiple high quality web applications surrounding machine learning and AI in the materials science field. Worked on pre-existing projects and also built the foundation of a project up from scratch, ensuring quality, functionality, and reliability in both cases.</p>
+            </div>
         </div>
       </div>
     </div>

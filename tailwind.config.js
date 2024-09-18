@@ -12,6 +12,7 @@ module.exports = {
       mauve: '#6B4D57',
       brown: '#896A67',
       light: '#DDC8C4',
+      darkerlight: '#b68880',
       text: '#EFF9F0'
     },
     extend: {
