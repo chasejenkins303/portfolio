@@ -108,7 +108,7 @@ function Home() {
             <p className="col-span-2 text-light text-sm sm:text-lg">2023-2024</p>
             <div className="col-span-6 flex flex-col text-sm sm:text-lg">
               <h1 className="text-md sm:text-lg pb-3 text-text ">Frontend Developer Intern &bull; Globus Labs, UChicago</h1>
-              <p className="text-sm sm:text-md">Developed multiple high quality web applications surrounding machine learning and AI in the materials science field. Worked on pre-existing projects and also built the foundation of a project up from scratch, ensuring quality, functionality, and reliability in both cases.</p>
+              <p className="text-sm sm:text-md">Developed multiple high-quality web applications surrounding machine learning and AI in the materials science field. Worked on pre-existing projects and also built a projects foundation up from scratch, ensuring quality, functionality, and reliability in both cases.</p>
             </div>
         </div>
       </div>
