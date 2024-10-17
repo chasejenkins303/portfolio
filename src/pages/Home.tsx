@@ -96,7 +96,10 @@ function Home() {
         </div>
       </div>
 
-      <div className="py-24 grid md:grid-cols-2 md:gap-12 lg:mx-24 text-light">
+      <h1 className="text-light underline text-3xl pt-24 text-center">
+      Experience  
+      </h1>
+      <div className="pb-24 pt-12 grid md:grid-cols-2 md:gap-12 lg:mx-24 text-light">
         <div className="hover:bg-opacity-10 bg-light bg-opacity-0 grid grid-cols-8 gap-2 p-4 rounded-xl">
             <p className="col-span-2 text-light text-sm sm:text-lg">2024-Present</p>
             <div className="col-span-6 flex flex-col">
@@ -109,6 +112,42 @@ function Home() {
             <div className="col-span-6 flex flex-col text-sm sm:text-lg">
               <h1 className="text-md sm:text-lg pb-3 text-text ">Frontend Developer Intern &bull; Globus Labs, UChicago</h1>
               <p className="text-sm sm:text-md">Developed multiple high-quality web applications surrounding machine learning and AI in the materials science field. Worked on pre-existing projects and also built a projects foundation up from scratch, ensuring quality, functionality, and reliability in both cases.</p>
+            </div>
+        </div>
+        <div className="hover:bg-opacity-10 bg-light bg-opacity-0 grid grid-cols-8 gap-2 p-4 rounded-xl">
+            <p className="col-span-2 text-light text-sm sm:text-lg">January-May 2023</p>
+            <div className="col-span-6 flex flex-col text-sm sm:text-lg">
+              <h1 className="text-md sm:text-lg pb-3 text-text ">Computer Science Supplemental Instructor &bull; University of North Carolina at Asheville</h1>
+              <p className="text-sm sm:text-md">Led study groups in 200-level Computer Science courses where I tutored students on the concepts of Object Oriented Programming. I also monitored students progress through GitLab and gave feedback on code and solutions to problems.</p>
+            </div>
+        </div>
+      </div>
+
+
+
+      <h1 className="text-light underline text-3xl pt-24 text-center">
+      Projects  
+      </h1>
+      <div className="pb-24 pt-12 grid md:grid-cols-2 md:gap-12 lg:mx-24 text-light">
+        <div className="hover:bg-opacity-10 bg-light bg-opacity-0 grid grid-cols-8 gap-2 p-4 rounded-xl">
+            <p className="col-span-2 text-light text-sm sm:text-lg">2024-Present</p>
+            <div className="col-span-6 flex flex-col">
+              <h1 className="text-md sm:text-lg text-text pb-3">Jr Associate Software Engineer &bull; Duck Creek Technologies</h1>
+              <p className="text-sm sm:text-md">Build, test, and refactor code to automate the process of provisioning infrastructure for new and existing customers. Automate the provisioning and configuration of virtual machines using terraform and powershell to ensure proper functionality and reliabilty. Assisted with interanal nuget packages to improve future developer experience</p>
+            </div>
+        </div>
+        <div className="hover:bg-opacity-10 bg-light bg-opacity-0 grid grid-cols-8 gap-2 p-4 rounded-xl">
+            <p className="col-span-2 text-light text-sm sm:text-lg">2023-2024</p>
+            <div className="col-span-6 flex flex-col text-sm sm:text-lg">
+              <h1 className="text-md sm:text-lg pb-3 text-text ">Frontend Developer Intern &bull; Globus Labs, UChicago</h1>
+              <p className="text-sm sm:text-md">Developed multiple high-quality web applications surrounding machine learning and AI in the materials science field. Worked on pre-existing projects and also built a projects foundation up from scratch, ensuring quality, functionality, and reliability in both cases.</p>
+            </div>
+        </div>
+        <div className="hover:bg-opacity-10 bg-light bg-opacity-0 grid grid-cols-8 gap-2 p-4 rounded-xl">
+            <p className="col-span-2 text-light text-sm sm:text-lg">January-May 2023</p>
+            <div className="col-span-6 flex flex-col text-sm sm:text-lg">
+              <h1 className="text-md sm:text-lg pb-3 text-text ">Computer Science Supplemental Instructor &bull; University of North Carolina at Asheville</h1>
+              <p className="text-sm sm:text-md">Led study groups in 200-level Computer Science courses where I tutored students on the concepts of Object Oriented Programming. I also monitored students progress through GitLab and gave feedback on code and solutions to problems.</p>
             </div>
         </div>
       </div>
