@@ -1,19 +1,35 @@
 import { motion } from "framer-motion";
 
 export default function Portfolio() {
+ 
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const y = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
+  };
+
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100 font-sans relative overflow-hidden">
       {/* Hero Section with Visible Animated Background */}
       <section className="relative flex flex-col items-center justify-center h-screen text-center px-6 overflow-hidden">
         {/* Visible Animated Background */}
-        <motion.div
-          className="absolute inset-0 z-10"
-          initial={{ rotate: 0 }}
-          animate={{ rotate: 360 }}
-          transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
-        >
-          <div className="w-full h-full bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 animate-[gradientShift_15s_linear_infinite] opacity-10 blur-2xl"></div>
-        </motion.div>
+        <div
+        className="absolute inset-0 z-10 opacity-50"
+        style={{
+          backgroundImage: `repeating-linear-gradient(
+            45deg,
+            rgba(255,255,255,0.1),
+            rgba(255,255,255,0.1) 1px,
+            transparent 1px,
+            transparent 30px
+          )`,
+          backgroundSize: '200% 200%',
+        }}
+      ></div>
+
+
 
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
@@ -39,18 +55,19 @@ export default function Portfolio() {
           transition={{ delay: 0.6, duration: 0.8 }}
           className="mt-10 flex gap-6"
         >
-          <a
-            href="#resume"
-            className="px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition font-semibold text-white shadow-lg"
-          >
-            View Resume
-          </a>
-          <a
-            href="#contact"
-            className="px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 transition font-semibold text-gray-200 shadow-lg"
-          >
-            Contact Me
-          </a>
+        <button
+          onClick={() => scrollToSection("resume")}
+          className="z-10 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition font-semibold text-white shadow-lg"
+        >
+          View Resume
+        </button>
+
+        <button
+          onClick={() => scrollToSection("contact")}
+          className="z-10 px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 transition font-semibold text-gray-200 shadow-lg"
+        >
+          Contact Me
+        </button>
         </motion.div>
       </section>
 
@@ -116,15 +133,28 @@ export default function Portfolio() {
       </section>
 
       {/* Contact Section */}
-      <section id="contact" className="px-8 py-20 bg-gray-950 scroll-mt-20">
+      <section id="contact" className="relative px-8 py-20 bg-gray-950 scroll-mt-20 overflow-hidden">
+        <div
+          className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none"
+          style={{
+            backgroundImage: `repeating-linear-gradient(
+              135deg,
+              rgba(255,255,255,0.1),
+              rgba(255,255,255,0.1) 1px,
+              transparent 1px,
+              transparent 30px
+            )`,
+            backgroundSize: '200% 200%',
+          }}
+        ></div>
         <h2 className="text-3xl font-bold text-white mb-10 text-center">Get in Touch</h2>
 
         <div className="max-w-xl mx-auto grid gap-8 sm:grid-cols-2 text-center">
-          <div className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+          <div className="relative bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
             <p className="text-indigo-400 text-sm font-medium">Email</p>
             <p className="mt-2 text-lg font-semibold text-white">chasejenkins@example.com</p>
           </div>
-          <div className="bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+          <div className="relative bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
             <p className="text-indigo-400 text-sm font-medium">Phone</p>
             <p className="mt-2 text-lg font-semibold text-white">(123) 456-7890</p>
           </div>
