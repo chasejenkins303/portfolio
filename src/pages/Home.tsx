@@ -3,20 +3,18 @@ import { motion } from "framer-motion";
 export default function Portfolio() {
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100 font-sans relative overflow-hidden">
-      {/* Subtle Side Animation */}
-      <motion.div
-        className="absolute top-0 right-0 h-full w-1/3 -z-10 opacity-20"
-        initial={{ backgroundPosition: "0% 50%" }}
-        animate={{ backgroundPosition: ["0% 50%", "100% 50%", "0% 50%"] }}
-        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-        style={{
-          backgroundImage: "linear-gradient(180deg, #4f46e5, #0a0a0a, #6366f1)",
-          backgroundSize: "200% 200%",
-        }}
-      />
+      {/* Hero Section with Visible Animated Background */}
+      <section className="relative flex flex-col items-center justify-center h-screen text-center px-6 overflow-hidden">
+        {/* Visible Animated Background */}
+        <motion.div
+          className="absolute inset-0 z-10"
+          initial={{ rotate: 0 }}
+          animate={{ rotate: 360 }}
+          transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
+        >
+          <div className="w-full h-full bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 animate-[gradientShift_15s_linear_infinite] opacity-30 blur-2xl"></div>
+        </motion.div>
 
-      {/* Hero Section */}
-      <section className="flex flex-col items-center justify-center h-screen text-center px-6 relative">
         <motion.h1
           initial={{ opacity: 0, y: -40 }}
           animate={{ opacity: 1, y: 0 }}

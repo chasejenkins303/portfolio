@@ -16,6 +16,21 @@ module.exports = {
           500: "#6366f1",
           600: "#4f46e5",
         },
+        purple: {
+          600: '#7c3aed',
+        },
+        blue: {
+          600: '#2563eb',
+        },
+      },
+      keyframes: {
+        gradientShift: {
+          '0%, 100%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+        },
+      },
+      animation: {
+        gradientShift: 'gradientShift 15s linear infinite',
       },
     },
   },
