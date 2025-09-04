@@ -12,7 +12,7 @@ export default function Portfolio() {
           animate={{ rotate: 360 }}
           transition={{ repeat: Infinity, duration: 60, ease: "linear" }}
         >
-          <div className="w-full h-full bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 animate-[gradientShift_15s_linear_infinite] opacity-30 blur-2xl"></div>
+          <div className="w-full h-full bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 animate-[gradientShift_15s_linear_infinite] opacity-10 blur-2xl"></div>
         </motion.div>
 
         <motion.h1
