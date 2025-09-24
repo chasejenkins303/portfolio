@@ -1,48 +1,48 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./src/**/*.{js,jsx,ts,tsx}",
-    "./src/*/*.{js,jsx,ts,tsx}"
+    "./index.html",
+    "./src/**/*.{js,ts,jsx,tsx}",
   ],
+  darkMode: "class", // allows dark mode with class="dark"
   theme: {
-    colors: {
-      transparent: 'transparent',
-      current: 'currentColor',
-      black: '#13070C',
-      mauve: '#6B4D57',
-      brown: '#896A67',
-      light: '#DDC8C4',
-      darkerlight: '#b68880',
-      text: '#EFF9F0'
-    },
     extend: {
-      fontFamily: {
-        sans: ['Ubuntu', 'sans-serif'],
+      colors: {
+        gray: {
+          950: "#0a0a0a",
+        },
+        indigo: {
+          400: "#818cf8",
+          500: "#6366f1",
+          600: "#4f46e5",
+        },
+        purple: {
+          600: '#7c3aed',
+        },
+        blue: {
+          600: '#2563eb',
+        },
+      },
+      keyframes: {
+        gradientShift: {
+          '0%, 100%': { 'background-position': '0% 50%' },
+          '50%': { 'background-position': '100% 50%' },
+        },
+        bgShift: {
+          '0%': { backgroundPosition: '0 0' },
+          '100%': { backgroundPosition: '1000px 1000px' },
+        },
+        pulseNoise: {
+          '0%, 100%': { opacity: '0.05' },
+          '50%': { opacity: '0.1' },
+        },
       },
       animation: {
-        float: 'float 3s ease-in-out infinite',
-        gradient: 'gradientShift 10s ease infinite',
-        pulse: 'pulse 3s ease-in-out infinite',
-        spinSlow: 'spinSlow 20s linear infinite',
-        wave: 'wave 5s ease-in-out infinite alternate',
-        fadeIn: 'fadeIn 1s ease-in forwards',
-        fadeInTwo: 'fadeIn 3s ease-in forwards',
-        fadeInThree: 'fadeIn 4s ease-in forwards'
+        gradientShift: 'gradientShift 15s linear infinite',
+        bgShift: 'bgShift 20s linear infinite',
+        pulseNoise: 'pulseNoise 10s linear infinite',
       },
-      keyframes: { 
-        float: {
-          "0%": { transform: "translateY(0)" },
-          "50%": { transform: "translateY(-10px)" },
-          "100%": { transform: "translateY(0)" }
-        },
-        fadeIn: {
-          '0%': { opacity: '0' },
-          '75%': { opacity: '0.5' },
-          '100%': { opacity: '1' },
-        }, 
-      }
     },
   },
   plugins: [],
-}
-
+};

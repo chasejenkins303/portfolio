@@ -1,158 +1,213 @@
-import WhiteSpace from "../components/WhiteSpace";
-import { useState, useEffect } from "react";
+import { motion } from "framer-motion";
 
-function Home() {
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [position, setPosition] = useState({ x: 0, y: 0 });
-
-  const handleMouseMove = (e: any) => {
-    setPosition({ x: e.clientX, y: e.clientY });
+export default function Portfolio() {
+ 
+  const scrollToSection = (id: string) => {
+    const section = document.getElementById(id);
+    if (section) {
+      const y = section.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: y, behavior: "smooth" });
+    }
   };
-
-  const gradientStyle = {
-    background: `radial-gradient(circle at ${position.x}px ${position.y -64}px, #6B4D65 0%, #6B4D60 20%, #6B4D57 70%)`,
-  };
-  useEffect(() => {
-    setIsLoaded(true);
-  }, []);
 
   return (
-    <div className="font-sans bg-mauve min-h-[100vh] w-full"
-         style={gradientStyle}
-         onMouseMove={handleMouseMove}>
-      <WhiteSpace isLoaded={isLoaded} />
-      <div className={`min-h-[55vh] flex justify-center items-end mb-8`}>
-        <div className="flex flex-col justify-center items-center text-center pt-12 gap-2 sm:gap-12">
-            <h1
-                className={`text-light text-4xl sm:text-4xl md:text-6xl lg:text-8xl p-8 font-medium rounded-xl relative ${
-                isLoaded ? "animate-fadeIn" : "opacity-0"
-                }`}
-            >
-                Chase Jenkins
-                <span className="absolute top-0 left-0 w-4 md:w-8 h-4 md:h-8 border-t-8 border-l-8 border-light"></span>
-                <span className="absolute bottom-0 right-0 w-4 md:w-8 h-4 md:h-8 border-b-8 border-r-8 border-light"></span>
-            </h1>
-            <div className={`rounded-xl m-4 ${
-                    isLoaded ? "animate-fadeInTwo" : "opacity-0"
-                    }`}
-            >
-                <div
-                    className={`max-w-[75vw] md:max-w-[65vw] xl:max-w-[45vw] text-light text-bold rounded-xl flex-col m-1 p-4 gap-2 ${
-                    isLoaded ? "animate-fadeInTwo" : "opacity-0"
-                    }`}
-                >
-                    <p className="text-md sm:text-xl pb-4 font-medium">Software Engineer</p>
-                    <p className="text-sm sm:text-lg">
-                    Hello, I am a software engineer with a passion for creating
-                    innovative, reliable, and useful software. Feel free to reach out
-                    via any of the listed methods and thank you for stopping by!
-                    </p>
-                </div>
-            </div>
-        </div>
-      </div>
-
-      <div
-        className={`flex justify-center ${
-          isLoaded ? "animate-fadeInThree" : "opacity-0"
-        }`}
-      >
-        <div className="grid grid-cols-5 w-[90vw] sm:w-[75vw] lg:px-36 gap-2 sm:gap-4 sm:pt-6 text-light text-sm md:text-lg place-items-center">
-          <svg
-            className="lg:w-32 lg:h-32 w-20 h-20"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 -960 960 960"
-            fill="#DDC8C4"
-          >
-            <path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm0-80h640v-400H160v400Zm140-40-56-56 103-104-104-104 57-56 160 160-160 160Zm180 0v-80h240v80H480Z" />
-          </svg>
-          <span
-            className="border-t-2 border-light w-full max-w-[128px]"
-          ></span>
-          <svg
-            className="lg:w-32 lg:h-32 w-20 h-20"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 -960 960 960"
-            fill="#DDC8C4"
-          >
-            <path d="M0-240v-53q0-38.57 41.5-62.78Q83-380 150.38-380q12.16 0 23.39.5t22.23 2.15q-8 17.35-12 35.17-4 17.81-4 37.18v65H0Zm240 0v-65q0-32 17.5-58.5T307-410q32-20 76.5-30t96.5-10q53 0 97.5 10t76.5 30q32 20 49 46.5t17 58.5v65H240Zm540 0v-65q0-19.86-3.5-37.43T765-377.27q11-1.73 22.17-2.23 11.17-.5 22.83-.5 67.5 0 108.75 23.77T960-293v53H780Zm-480-60h360v-6q0-37-50.5-60.5T480-390q-79 0-129.5 23.5T300-305v5ZM149.57-410q-28.57 0-49.07-20.56Q80-451.13 80-480q0-29 20.56-49.5Q121.13-550 150-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T149.57-410Zm660 0q-28.57 0-49.07-20.56Q740-451.13 740-480q0-29 20.56-49.5Q781.13-550 810-550q29 0 49.5 20.5t20.5 49.93q0 28.57-20.5 49.07T809.57-410ZM480-480q-50 0-85-35t-35-85q0-51 35-85.5t85-34.5q51 0 85.5 34.5T600-600q0 50-34.5 85T480-480Zm.35-60Q506-540 523-557.35t17-43Q540-626 522.85-643t-42.5-17q-25.35 0-42.85 17.15t-17.5 42.5q0 25.35 17.35 42.85t43 17.5ZM480-300Zm0-300Z" />
-          </svg>
-          <span
-            className="border-t-2 border-light w-full max-w-[128px]"
-          ></span>
-          <svg
-            className="lg:w-32 lg:h-32 w-20 h-20"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 -960 960 960"
-            fill="#DDC8C4"
-          >
-            <path d="M480-375 375-480l105-105 105 105-105 105Zm-85-294-83-83 168-168 168 168-83 83-85-85-85 85ZM208-312 40-480l168-168 83 83-85 85 85 85-83 83Zm544 0-83-83 85-85-85-85 83-83 168 168-168 168ZM480-40 312-208l83-83 85 85 85-85 83 83L480-40Z" />
-          </svg>
-          <p className="text-center col-start-1 col-end-2 text-sm md:text-xl">Developer</p>
-          <p className="text-center col-start-3 col-end-4 text-sm md:text-xl">
-            Collaborator
-          </p>
-          <p className="text-center col-start-5 col-end-6 text-sm md:text-xl">Architect</p>
-        </div>
-      </div>
-
-      <h1 className="text-light underline text-3xl pt-24 text-center">
-      Experience  
-      </h1>
-      <div className="pb-24 pt-12 grid md:grid-cols-2 md:gap-12 lg:mx-24 text-light">
-        <div className="hover:bg-opacity-10 bg-light bg-opacity-0 grid grid-cols-8 gap-2 p-4 rounded-xl">
-            <p className="col-span-2 text-light text-sm sm:text-lg">2024-Present</p>
-            <div className="col-span-6 flex flex-col">
-              <h1 className="text-md sm:text-lg text-text pb-3">Jr Associate Software Engineer &bull; Duck Creek Technologies</h1>
-              <p className="text-sm sm:text-md">Build, test, and refactor code to automate the process of provisioning infrastructure for new and existing customers. Automate the provisioning and configuration of virtual machines using terraform and powershell to ensure proper functionality and reliabilty. Assisted with interanal nuget packages to improve future developer experience</p>
-            </div>
-        </div>
-        <div className="hover:bg-opacity-10 bg-light bg-opacity-0 grid grid-cols-8 gap-2 p-4 rounded-xl">
-            <p className="col-span-2 text-light text-sm sm:text-lg">2023-2024</p>
-            <div className="col-span-6 flex flex-col text-sm sm:text-lg">
-              <h1 className="text-md sm:text-lg pb-3 text-text ">Frontend Developer Intern &bull; Globus Labs, UChicago</h1>
-              <p className="text-sm sm:text-md">Developed multiple high-quality web applications surrounding machine learning and AI in the materials science field. Worked on pre-existing projects and also built a projects foundation up from scratch, ensuring quality, functionality, and reliability in both cases.</p>
-            </div>
-        </div>
-        <div className="hover:bg-opacity-10 bg-light bg-opacity-0 grid grid-cols-8 gap-2 p-4 rounded-xl">
-            <p className="col-span-2 text-light text-sm sm:text-lg">January-May 2023</p>
-            <div className="col-span-6 flex flex-col text-sm sm:text-lg">
-              <h1 className="text-md sm:text-lg pb-3 text-text ">Computer Science Supplemental Instructor &bull; University of North Carolina at Asheville</h1>
-              <p className="text-sm sm:text-md">Led study groups in 200-level Computer Science courses where I tutored students on the concepts of Object Oriented Programming. I also monitored students progress through GitLab and gave feedback on code and solutions to problems.</p>
-            </div>
-        </div>
-      </div>
+    <div className="min-h-screen bg-gray-950 text-gray-100 font-sans relative overflow-hidden">
+      {/* Hero Section with Visible Animated Background */}
+      <section className="relative flex flex-col items-center justify-center h-screen text-center px-6 overflow-hidden">
+        {/* Visible Animated Background */}
+        <div
+        className="absolute inset-0 z-10 opacity-50"
+        style={{
+          backgroundImage: `repeating-linear-gradient(
+            45deg,
+            rgba(255,255,255,0.1),
+            rgba(255,255,255,0.1) 1px,
+            transparent 1px,
+            transparent 30px
+          )`,
+          backgroundSize: '200% 200%',
+        }}
+      ></div>
 
 
 
-      <h1 className="text-light underline text-3xl pt-24 text-center">
-      Projects  
-      </h1>
-      <div className="pb-24 pt-12 grid md:grid-cols-2 md:gap-12 lg:mx-24 text-light">
-        <div className="hover:bg-opacity-10 bg-light bg-opacity-0 grid grid-cols-8 gap-2 p-4 rounded-xl">
-            <p className="col-span-2 text-light text-sm sm:text-lg">2024-Present</p>
-            <div className="col-span-6 flex flex-col">
-              <h1 className="text-md sm:text-lg text-text pb-3">Jr Associate Software Engineer &bull; Duck Creek Technologies</h1>
-              <p className="text-sm sm:text-md">Build, test, and refactor code to automate the process of provisioning infrastructure for new and existing customers. Automate the provisioning and configuration of virtual machines using terraform and powershell to ensure proper functionality and reliabilty. Assisted with interanal nuget packages to improve future developer experience</p>
-            </div>
+        <motion.h1
+          initial={{ opacity: 0, y: -40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="text-5xl md:text-7xl font-extrabold tracking-tight text-white"
+        >
+          Chase Jenkins
+        </motion.h1>
+
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3, duration: 0.8 }}
+          className="mt-6 text-lg md:text-2xl max-w-2xl text-gray-300"
+        >
+          Software engineer with a passion for creating innovative, reliable, and useful software.
+        </motion.p>
+
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.6, duration: 0.8 }}
+          className="mt-10 flex gap-6"
+        >
+        <button
+          onClick={() => scrollToSection("resume")}
+          className="z-10 px-6 py-3 rounded-xl bg-indigo-600 hover:bg-indigo-500 transition font-semibold text-white shadow-lg"
+        >
+          View Resume
+        </button>
+
+        <button
+          onClick={() => scrollToSection("contact")}
+          className="z-10 px-6 py-3 rounded-xl bg-gray-800 hover:bg-gray-700 transition font-semibold text-gray-200 shadow-lg"
+        >
+          Contact Me
+        </button>
+        </motion.div>
+      </section>
+
+      {/* Resume Section */}
+<section id="resume" className="px-8 py-20 bg-gray-900 rounded-t-3xl shadow-xl scroll-mt-20">
+  <h2 className="text-3xl font-bold text-white mb-16 text-center">Resume</h2>
+
+  {/* Experience */}
+  <div className="max-w-3xl mx-auto mb-16">
+    <h3 className="text-2xl font-semibold text-indigo-400 mb-10">Experience</h3>
+    <ul className="relative border-l border-gray-700 pl-6 space-y-12">
+      {/* Associate Role */}
+      <li className="flex flex-col relative">
+        <span className="absolute -left-3 mt-2 w-5 h-5 rounded-full bg-indigo-500 border-2 border-gray-900"></span>
+        <div className="ml-4">
+          <p className="font-semibold text-white text-lg mb-1">Associate Software Engineer – Duck Creek Technologies</p>
+          <p className="text-gray-400 text-sm mb-2">June 2025 – Present</p>
+          <ul className="list-disc pl-5 text-gray-400 space-y-1">
+            <li>Developed an automated pipeline for infrastructure provisioning, testing, and reporting, catching 100s of bugs before production.</li>
+            <li>Implemented a system to store disk images of legacy deployment environments, reducing setup time from weeks to hours.</li>
+            <li>Automated Kafka DR process into a single trigger pipeline, minimizing downtime and preventing data loss.</li>
+          </ul>
         </div>
-        <div className="hover:bg-opacity-10 bg-light bg-opacity-0 grid grid-cols-8 gap-2 p-4 rounded-xl">
-            <p className="col-span-2 text-light text-sm sm:text-lg">2023-2024</p>
-            <div className="col-span-6 flex flex-col text-sm sm:text-lg">
-              <h1 className="text-md sm:text-lg pb-3 text-text ">Frontend Developer Intern &bull; Globus Labs, UChicago</h1>
-              <p className="text-sm sm:text-md">Developed multiple high-quality web applications surrounding machine learning and AI in the materials science field. Worked on pre-existing projects and also built a projects foundation up from scratch, ensuring quality, functionality, and reliability in both cases.</p>
-            </div>
+      </li>
+
+      {/* Junior Role */}
+      <li className="flex flex-col relative">
+        <span className="absolute -left-3 mt-2 w-5 h-5 rounded-full bg-indigo-400 border-2 border-gray-900"></span>
+        <div className="ml-4">
+          <p className="font-semibold text-white text-lg mb-1">Junior Associate Software Engineer – Duck Creek Technologies</p>
+          <p className="text-gray-400 text-sm mb-2">June 2024 – June 2025</p>
+          <ul className="list-disc pl-5 text-gray-400 space-y-1">
+            <li>Broke apart a monolithic pipeline into parallel jobs, reducing deployment time by 50%.</li>
+            <li>Created internal libraries that standardized dev tool interactions, speeding up development.</li>
+            <li>Won multiple internal coding competitions, including an AI hackathon across the engineering org.</li>
+          </ul>
         </div>
-        <div className="hover:bg-opacity-10 bg-light bg-opacity-0 grid grid-cols-8 gap-2 p-4 rounded-xl">
-            <p className="col-span-2 text-light text-sm sm:text-lg">January-May 2023</p>
-            <div className="col-span-6 flex flex-col text-sm sm:text-lg">
-              <h1 className="text-md sm:text-lg pb-3 text-text ">Computer Science Supplemental Instructor &bull; University of North Carolina at Asheville</h1>
-              <p className="text-sm sm:text-md">Led study groups in 200-level Computer Science courses where I tutored students on the concepts of Object Oriented Programming. I also monitored students progress through GitLab and gave feedback on code and solutions to problems.</p>
-            </div>
+      </li>
+
+      {/* Internship */}
+      <li className="flex flex-col relative">
+        <span className="absolute -left-3 mt-2 w-5 h-5 rounded-full bg-indigo-400 border-2 border-gray-900"></span>
+        <div className="ml-4">
+          <p className="font-semibold text-white text-lg mb-1">Frontend Developer Intern – Globus Labs, University of Chicago</p>
+          <p className="text-gray-400 text-sm mb-2">May 2023 – May 2024</p>
+          <ul className="list-disc pl-5 text-gray-400 space-y-1">
+            <li>Used React, Vue, TypeScript, and Tailwind CSS to build responsive and functional websites.</li>
+            <li>Contributed in an Agile workflow with stand-ups, sprint planning, and retrospectives.</li>
+          </ul>
         </div>
-      </div>
+      </li>
+
+      {/* Teaching Role */}
+      <li className="flex flex-col relative">
+        <span className="absolute -left-3 mt-2 w-5 h-5 rounded-full bg-indigo-400 border-2 border-gray-900"></span>
+        <div className="ml-4">
+          <p className="font-semibold text-white text-lg mb-1">Computer Science Supplemental Instructor – UNC Asheville Writing Center</p>
+          <p className="text-gray-400 text-sm mb-2">Jan 2023 – May 2023</p>
+          <ul className="list-disc pl-5 text-gray-400 space-y-1">
+            <li>Led study sessions supporting students in Computer Science courses.</li>
+          </ul>
+        </div>
+      </li>
+
+      {/* Leadership Role */}
+      <li className="flex flex-col relative">
+        <span className="absolute -left-3 mt-2 w-5 h-5 rounded-full bg-indigo-400 border-2 border-gray-900"></span>
+        <div className="ml-4">
+          <p className="font-semibold text-white text-lg mb-1">Peer Advising Leader – UNC Asheville Student Leadership</p>
+          <p className="text-gray-400 text-sm mb-2">Aug 2022 – Dec 2022</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+
+  {/* Education */}
+  <div className="max-w-3xl mx-auto mb-16">
+    <h3 className="text-2xl font-semibold text-indigo-400 mb-6">Education</h3>
+    <p className="text-white font-semibold">University of North Carolina at Asheville</p>
+    <p className="text-gray-400 text-sm mb-2">Bachelor of Science in Computer Science, 2020–2024</p>
+    <p className="text-gray-400 text-sm">GPA: 3.94</p>
+  </div>
+
+  {/* Skills */}
+  <div className="max-w-3xl mx-auto">
+    <h3 className="text-2xl font-semibold text-indigo-400 mb-6">Technical Skills</h3>
+    <ul className="grid grid-cols-2 sm:grid-cols-3 gap-3 text-gray-300">
+      <li className="bg-gray-800 p-2 rounded-lg text-center">C#</li>
+      <li className="bg-gray-800 p-2 rounded-lg text-center">Bash</li>
+      <li className="bg-gray-800 p-2 rounded-lg text-center">Powershell</li>
+      <li className="bg-gray-800 p-2 rounded-lg text-center">Terraform</li>
+      <li className="bg-gray-800 p-2 rounded-lg text-center">Azure (AZ-900)</li>
+      <li className="bg-gray-800 p-2 rounded-lg text-center">JavaScript</li>
+      <li className="bg-gray-800 p-2 rounded-lg text-center">TypeScript</li>
+      <li className="bg-gray-800 p-2 rounded-lg text-center">React</li>
+      <li className="bg-gray-800 p-2 rounded-lg text-center">Vue.js</li>
+      <li className="bg-gray-800 p-2 rounded-lg text-center">Tailwind CSS</li>
+      <li className="bg-gray-800 p-2 rounded-lg text-center">Java</li>
+      <li className="bg-gray-800 p-2 rounded-lg text-center">Spring</li>
+      <li className="bg-gray-800 p-2 rounded-lg text-center">Python</li>
+      <li className="bg-gray-800 p-2 rounded-lg text-center">SQL</li>
+      <li className="bg-gray-800 p-2 rounded-lg text-center">Docker</li>
+    </ul>
+  </div>
+</section>
+
+
+      {/* Contact Section */}
+      <section id="contact" className="relative px-8 py-20 bg-gray-950 scroll-mt-20 overflow-hidden">
+        <div
+          className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none"
+          style={{
+            backgroundImage: `repeating-linear-gradient(
+              135deg,
+              rgba(255,255,255,0.1),
+              rgba(255,255,255,0.1) 1px,
+              transparent 1px,
+              transparent 30px
+            )`,
+            backgroundSize: '200% 200%',
+          }}
+        ></div>
+        <h2 className="text-3xl font-bold text-white mb-10 text-center">Get in Touch</h2>
+
+        <div className="max-w-xl mx-auto grid gap-8 sm:grid-cols-2 text-center">
+          <div className="relative bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+            <p className="text-indigo-400 text-sm font-medium">Email</p>
+            <p className="mt-2 text-lg font-semibold text-white">chasejenkins303@gmail.com</p>
+          </div>
+          <div className="relative bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
+            <p className="text-indigo-400 text-sm font-medium">Phone</p>
+            <p className="mt-2 text-lg font-semibold text-white">(704) 793-7879</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="py-6 text-center text-gray-500 text-sm bg-gray-900">
+        © {new Date().getFullYear()} Chase Jenkins. All rights reserved.
+      </footer>
     </div>
   );
 }
-
-export default Home;
