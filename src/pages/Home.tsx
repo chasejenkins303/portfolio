@@ -12,9 +12,7 @@ export default function Portfolio() {
 
   return (
     <div className="min-h-screen bg-gray-950 text-gray-100 font-sans relative overflow-hidden">
-      {/* Hero Section with Visible Animated Background */}
       <section className="relative flex flex-col items-center justify-center h-screen text-center px-6 overflow-hidden">
-        {/* Visible Animated Background */}
         <div
         className="absolute inset-0 z-10 opacity-50"
         style={{
@@ -198,13 +196,12 @@ export default function Portfolio() {
             <p className="mt-2 text-lg font-semibold text-white">chasejenkins303@gmail.com</p>
           </div>
           <div className="relative bg-gray-900 p-6 rounded-2xl shadow-lg hover:shadow-xl transition">
-            <p className="text-indigo-400 text-sm font-medium">Phone</p>
-            <p className="mt-2 text-lg font-semibold text-white">(704) 793-7879</p>
+            <p className="text-indigo-400 text-sm font-medium">LinkedIn</p>
+            <a href="www.linkedin.com/in/chase-jenkins-90018a26a" className="mt-2 text-lg font-semibold text-white">linkedin.com/in/chase-jenkins-90018a26a/</a>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="py-6 text-center text-gray-500 text-sm bg-gray-900">
         © {new Date().getFullYear()} Chase Jenkins. All rights reserved.
       </footer>
